@@ -4,10 +4,10 @@ $ablakcim = array(
 );
 
 $fejlec = array(
-	'kepforras' => 'select-mundo-purple-orange-1-es-meret.jpg',
+    'kepforras' => 'select-mundo-purple-orange-1-es-meret.jpg',
     'kepalt' => 'labda',
     'cim' => 'Csak Előre!',
-	'motto' => ''
+    'motto' => 'A Szegedi Kézilabdáért Egyesület'
 );
 
 $lablec = array(
@@ -16,10 +16,10 @@ $lablec = array(
 );
 
 $oldalak = array(
-	'/' => array('fajl' => 'cimlap', 'szoveg' => 'Rólunk', 'menun' => array(1,1)),
-	'galeria' => array('fajl' => 'galeria', 'szoveg' => 'Galéria', 'menun' => array(1,1)),
-	'kapcsolat' => array('fajl' => 'kapcsolat', 'szoveg' => 'Kapcsolat', 'menun' => array(1,1)),
-	'hirek' => array('fajl' => 'cikkek', 'szoveg' => 'Hírek', 'menun' => array(1,1)),
+    '/' => array('fajl' => 'cimlap', 'szoveg' => 'Rólunk', 'menun' => array(1,1)),
+    'galeria' => array('fajl' => 'galeria', 'szoveg' => 'Galéria', 'menun' => array(1,1)),
+    'kapcsolat' => array('fajl' => 'kapcsolat', 'szoveg' => 'Kapcsolat', 'menun' => array(1,1)),
+    'hirek' => array('fajl' => 'cikkek', 'szoveg' => 'Hírek', 'menun' => array(1,1)),
     'versenynaptar' => array('fajl' => 'versenynaptar', 'szoveg' => 'Versenynaptár', 'menun' => array(1,1)),
     'belepes' => array('fajl' => 'belepes', 'szoveg' => 'Belépés', 'menun' => array(1,0)),
     'kilepes' => array('fajl' => 'kilepes', 'szoveg' => 'Kilépés', 'menun' => array(0,1)),
