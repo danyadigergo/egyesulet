@@ -24,7 +24,7 @@
     </section>
     <form action="/galeria.tpl.php">
         <label for="img">Válasszon képet:</label>
-        <input type="file" id="img" name="img" accept="images/*">
+        <input type="file" id="img" name="img" accept="images\*">
         <input type="submit" class ="feltoltes">
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
