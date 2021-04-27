@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Első webapp</title>
     <link rel=stylesheet type=text/css href=styles.css>
 </head>
 <body>
-    <main style="height:600px;">
-        <button><img id="leftarrow" src="http://stayathome-syllabus.greenfox.academy/week03/assets/arrow.svg"/></button>
+    <main>
+        <button><img id="leftarrow" src="images\left_arrow.png"/></button>
         <div class="box">    
             <img id="photo"></img>
             <div class="grey-container" style="margin-left:30px;">
@@ -16,14 +15,18 @@
                 <p id="photo-description"></p>
             </div>
         </div>
-        <button><img id="rightarrow" src="http://stayathome-syllabus.greenfox.academy/week03/assets/arrow.svg"/></button>
+        <button><img id="rightarrow" src="images\right_arrow.png"/></button>
     </main>
     <section class="thumbnails">
-        <img class="thumbnail" src="images/lightspeed.jpg"/>
-        <img class="thumbnail" src="images/dawn.jpg"/>
-        <img class="thumbnail" src="images/lawa.jpg"/>
-        <img class="thumbnail" src="images/space.jpg"/>
+        <img class="thumbnail" src="images\Szeged_csapat.jpg"/>
+        <img class="thumbnail" src="images\szurkolok.jpg"/>
+        <img class="thumbnail" src="images\pick-handball-logo.png"/>
     </section>
+    <form action="/galeria.tpl.php">
+        <label for="img">Válasszon képet:</label>
+        <input type="file" id="img" name="img" accept="images/*">
+        <input type="submit" class ="feltoltes">
+    </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascript.js"></script>
 </body>

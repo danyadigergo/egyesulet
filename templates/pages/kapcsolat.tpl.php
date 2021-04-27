@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<html>
   <head>
     <title>Kapcsolat</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -98,7 +97,7 @@
         <i class="fas fa-at"></i>
         <i class="fas fa-mail-bulk"></i>
       </div>
-      <form action="/">
+      <form method="POST" action="form.php" id="contact-form">
         <h1>Írjon nekünk:</h1>
         <div class="info">
           <input class="fname" type="text" name="name" placeholder="Név">
@@ -113,3 +112,69 @@
       </form>
     </div>
   </body>
+  <script>
+   const constraints = {
+       name: {
+           presence: { allowEmpty: false }
+       },
+       email: {
+           presence: { allowEmpty: false },
+           email: true
+       },
+       message: {
+           presence: { allowEmpty: false }
+       }
+   };
+
+   const form = document.getElementById('contact-form');
+
+   form.addEventListener('submit', function (event) {
+     const formValues = {
+         name: form.elements.name.value,
+         email: form.elements.email.value,
+         message: form.elements.message.value
+     };
+
+     const errors = validate(formValues, constraints);
+
+     if (errors) {
+       event.preventDefault();
+       const errorMessage = Object
+           .values(errors)
+           .map(function (fieldValues) { return fieldValues.join(', ')})
+           .join("\n");
+
+       alert(errorMessage);
+     }
+   }, false);
+</script>
+<?php
+
+$errors = [];
+
+if (!empty($_POST)) {
+   $name = $_POST['name'];
+   $email = $_POST['email'];
+   $message = $_POST['message'];
+
+   if (empty($name)) {
+       $errors[] = 'Name is empty';
+   }
+
+   if (empty($email)) {
+       $errors[] = 'Email is empty';
+   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+       $errors[] = 'Email is invalid';
+   }
+
+   if (empty($message)) {
+       $errors[] = 'Message is empty';
+   }
+}
+?>
+<?php
+if (!empty($errors)) {
+   $allErrors = join('<br/>', $errors);
+   $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
+}
+?>
