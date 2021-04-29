@@ -108,6 +108,12 @@
           <textarea name="message" rows="4"></textarea>
         </div>
         <button type="submit" href="/">Küldés</button>
+        <?php if(isset($uzenet)) { ?>
+            <h1><?= $uzenet ?></h1>
+            <?php if($ujra) { ?>
+                <p>Próbálja újra!</p>
+            <?php } ?>
+        <?php } ?>
       </form>
     </div>
   </body>
