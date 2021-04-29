@@ -13,7 +13,7 @@
       font-size: 14px;
       color: #666;
       }
-      h1 {
+      h2 {
       margin: 0 0 20px;
       font-weight: 400;
       color: #1c87c9;
@@ -97,15 +97,15 @@
         <i class="fas fa-at"></i>
         <i class="fas fa-mail-bulk"></i>
       </div>
-      <form method="POST" action="form.php" id="contact-form">
-        <h1>Írjon nekünk:</h1>
+      <form method="POST" action="logicals\uzenet.php" id="contact-form">
+        <h2>Írjon nekünk:</h2>
         <div class="info">
-          <input class="fname" type="text" name="name" placeholder="Név">
-          <input type="text" name="name" placeholder="Email">
+          <input class="fname" type="text" name="felado" placeholder="Név">
+          <input type="text" name="email" placeholder="Email">
         </div>
         <p>Üzenet</p>
         <div>
-          <textarea rows="4"></textarea>
+          <textarea name="message" rows="4"></textarea>
         </div>
         <button type="submit" href="/">Küldés</button>
       </form>
@@ -147,42 +147,3 @@
      }
    }, false);
 </script>
-<?php
-
-$errors = [];
-
-if (!empty($_POST)) {
-   $name = $_POST['name'];
-   $email = $_POST['email'];
-   $message = $_POST['message'];
-
-   if (empty($name)) {
-       $errors[] = 'Adja meg a nevét!';
-   }
-
-   if (empty($email)) {
-       $errors[] = 'Adjon meg eMail címet!';
-   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-       $errors[] = 'eMail cím érvénytelen.';
-   }
-
-   if (empty($message)) {
-       $errors[] = 'Kérjük írjon üzenetet!';
-   }
-}
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Regisztráció</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <?php if(isset($uzenet)) { ?>
-            <h1><?= $uzenet ?></h1>
-            <?php if($ujra) { ?>
-                <a href="pelda.html">Próbálja újra!</a>
-            <?php } ?>
-        <?php } ?>
-    </body>  
-</html>

@@ -9,14 +9,14 @@ if(isset($_POST['felado']) && isset($_POST['email']) && isset($_POST['message'])
                     values(0, :felado, :email, :message)";
         $stmt = $dbh->prepare($sqlInsert); 
         $stmt->execute(array(':felado' => $_POST['felado'], ':email' => $_POST['email'],
-                             ':message' => $_POST['message'])); 
+                             ':message' => $_POST['message']));
         if($count = $stmt->rowCount()) {
             $newid = $dbh->lastInsertId();
-            $uzenet = "Az üzenet elküldése sikeres.<br>Azonosítója: {$newid}";                     
+            $uzenet = "Az üzenet elküldése sikerült.<br>Azonosítója: {$newid}";                     
             $ujra = false;
         }
         else {
-            $uzenet = "Az üzenet elküldése nem sikerült.";
+            $uzenet = "Az üzenet elküldése sikertelen volt.";
             $ujra = true;
         }
     }
@@ -24,8 +24,5 @@ if(isset($_POST['felado']) && isset($_POST['email']) && isset($_POST['message'])
         $uzenet = "Hiba: ".$e->getMessage();
         $ujra = true;
     }      
-}
-else {
-    header("Location: .");
 }
 ?>
