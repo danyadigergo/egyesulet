@@ -102,7 +102,6 @@
         <div class="info">
           <input class="fname" type="text" name="name" placeholder="Név">
           <input type="text" name="name" placeholder="Email">
-          <input type="text" name="name" placeholder="Telefonszám">
         </div>
         <p>Üzenet</p>
         <div>
@@ -172,9 +171,18 @@ if (!empty($_POST)) {
    }
 }
 ?>
-<?php
-if (!empty($errors)) {
-   $allErrors = join('<br/>', $errors);
-   $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
-}
-?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Regisztráció</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <?php if(isset($uzenet)) { ?>
+            <h1><?= $uzenet ?></h1>
+            <?php if($ujra) { ?>
+                <a href="pelda.html">Próbálja újra!</a>
+            <?php } ?>
+        <?php } ?>
+    </body>  
+</html>
