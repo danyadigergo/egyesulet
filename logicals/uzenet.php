@@ -12,7 +12,7 @@ if(isset($_POST['felado']) && isset($_POST['email']) && isset($_POST['message'])
                              ':message' => $_POST['message']));
         if($count = $stmt->rowCount()) {
             $newid = $dbh->lastInsertId();
-            $uzenet = "Az üzenet elküldése sikerült.<br>Azonosítója: {$newid}";                     
+            $uzenet = "Az üzenet elküldése sikerült.<br>Az üzenet: {$_POST['message']}";                     
             $ujra = false;
         }
         else {
