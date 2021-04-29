@@ -47,9 +47,3 @@ footer {
     font-size: smaller;
     text-align: center;
 }
-.feltoltes {
-    display: none;
-}
-.logged-in .feltoltes{
-    display: block;
-}

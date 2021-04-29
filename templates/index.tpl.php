@@ -44,6 +44,8 @@
         <?php if (isset($lablec['copyright'])) { ?>&copy;&nbsp;<?= $lablec['copyright'] ?> <?php } ?>
         &nbsp;
         <?php if (isset($lablec['ceg'])) { ?><?= $lablec['ceg']; ?><?php } ?>
+        <a href="http://csakelore.hu/">Eredeti weboldal</a>
+        <a href="http://www.csakelore.hu/belepesi_nyilatkozat.pdf">Belépési nyilatkozat</a>
     </footer>
 </div>
 </body>

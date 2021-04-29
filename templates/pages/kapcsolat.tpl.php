@@ -158,17 +158,17 @@ if (!empty($_POST)) {
    $message = $_POST['message'];
 
    if (empty($name)) {
-       $errors[] = 'Name is empty';
+       $errors[] = 'Adja meg a nevét!';
    }
 
    if (empty($email)) {
-       $errors[] = 'Email is empty';
+       $errors[] = 'Adjon meg eMail címet!';
    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-       $errors[] = 'Email is invalid';
+       $errors[] = 'eMail cím érvénytelen.';
    }
 
    if (empty($message)) {
-       $errors[] = 'Message is empty';
+       $errors[] = 'Kérjük írjon üzenetet!';
    }
 }
 ?>
