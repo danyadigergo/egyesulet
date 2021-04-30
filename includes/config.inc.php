@@ -4,7 +4,7 @@ $ablakcim = array(
 );
 
 $fejlec = array(
-    'kepforras' => 'select-mundo-purple-orange-1-es-meret.jpg',
+    'kepforras' => 'cropped-cropped-logo_final-v2_100_wb.png',
     'kepalt' => 'labda',
     'cim' => 'Csak Előre!',
     'motto' => 'A Szegedi Kézilabdáért Egyesület'

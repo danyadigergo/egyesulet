@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+}
+
+.text-content {
+    padding: 15px;
+    width: 60%;
+}
+
+.videos {
+    padding: 15px;
+    width: 40%;
+}
+
+.videos video {
+    width: 100%;
+    min-height: 200px;
+}
+
+.videos iframe {
+    width: 100%;
+    min-height: 200px;
+}
