@@ -1,58 +1,38 @@
-<h1>Galéria</h1>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel=stylesheet type=text/css href=styles.css>
-</head>
-<body>
-    <main>
-        <button><img id="leftarrow" src="images\left_arrow.png"/></button>
-        <div class="box">    
-            <img id="photo"></img>
-            <div class="grey-container" style="margin-left:30px;">
-                <h1 id="photo-title"></h1>
-                <p id="photo-description"></p>
-            </div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="images\Szeged_csapat.jpg" alt="First slide">
         </div>
-        <button><img id="rightarrow" src="images\right_arrow.png"/></button>
-    </main>
-    <section class="thumbnails">
-        <img class="thumbnail" src="images\Szeged_csapat.jpg"/>
-        <img class="thumbnail" src="images\szurkolok.jpg"/>
-        <img class="thumbnail" src="images\pick-handball-logo.png"/>
-    </section>
-    <form action="/galeria.tpl.php">
-        <label for="img">Válasszon képet:</label>
-        <input type="file" id="img" name="img" accept="images\*">
-        <input type="submit" class ="feltoltes">
-    </form>
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("demo");
-            var captionText = document.getElementById("caption");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            captionText.innerHTML = dots[slideIndex-1].alt;
-        }
-    </script>
-</body>
-</html>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="images\szurkolok.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="images\pick-handball-logo.png" alt="Third slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<form>
+    <?php if (isset($_SESSION['login'])) { ?><div class="form-group">
+        <label for="exampleFormControlFile1">Kép feltöltése</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+    <button type="submit" href="images\uploaded_images">Feltöltés</button>
+    <?php }?>
+</form>
+
+<script>
+$("carousel-inner").append("szöveg");
+</script>
